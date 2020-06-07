@@ -1,4 +1,4 @@
-const { Order } = require('../models/orders')
+const { Order, validateOrder } = require('../models/orders')
 const mongoose = require('mongoose')
 const express = require('express')
 const router = express.Router()
@@ -10,6 +10,12 @@ router.get('/', (req, res) => {
 
 // Post new order
 router.post('/', async (req, res) => {
+  // validate the request body
+  const { error } = validateOrder(req.body)
+
+  // return here if we have an error
+  if (error) return res.status(400).send(error.details[0].message)
+
   const {
     Product_name,
     Brand,
