@@ -18,8 +18,9 @@ router.post('/', async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message)
 
   const {
-    Product_name,
     Brand,
+    Product_name,
+    Product_img,
     Category,
     Size,
     Colour,
@@ -28,8 +29,9 @@ router.post('/', async (req, res) => {
   } = req.body
 
   const order = new Order({
-    Product_name,
     Brand,
+    Product_name,
+    Product_img,
     Category,
     Size,
     Colour,
