@@ -1,5 +1,5 @@
 const express = require('express')
-const bodyParser = require('bodsy-parser')
+const bodyParser = require('body-parser')
 const orders = require('../routes/orders')
 
 module.exports = function (app) {
