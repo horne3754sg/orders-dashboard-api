@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 // Get an order by ID
 router.get('/:id', async (req, res) => {
   const order = await Order.findById(req.params.id).select('-__v')
-  if (!order) cosole.log('The order was not found')
+  if (!order) console.log('The order was not found')
   res.send(order)
 })
 
