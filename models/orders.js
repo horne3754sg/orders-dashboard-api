@@ -28,6 +28,8 @@ function validateOrder(order) {
     Status: Joi.string().required(),
     Customer_initials: Joi.string().required(),
   })
+
+  return schema.validate(order)
 }
 
 exports.Order = Order

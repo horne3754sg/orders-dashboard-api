@@ -4,8 +4,9 @@ const express = require('express')
 const router = express.Router()
 
 // Get all orders
-router.get('/', (req, res) => {
-  res.send([])
+router.get('/', async (req, res) => {
+  const orders = await Order.find().sort({ createdBy: -1 })
+  res.send(orders)
 })
 
 // Post new order
