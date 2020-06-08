@@ -1,3 +1,7 @@
+The APP for this API can be found [here](https://github.com/horne3754sg/react-orders-dashboard)
+
+The Database uses MongoDB
+
 ## Available Scripts
 
 In the project directory, you can run:
