@@ -18,9 +18,62 @@ API URL - click [http://localhost:5000/api/orders/](http://localhost:5000/api/or
 
 Returns an array of all orders
 
+```
+[
+    {
+        "_id": "5edcf810cbb30baffc29bd6f",
+        "Brand": "Nike",
+        "Product_name": "Air",
+        "Product_img": "/images/nike-blaze.png",
+        "Category": "Junior",
+        "Size": "UK 11",
+        "Colour": "Black",
+        "Status": "READY",
+        "Customer_initials": "JD",
+        "__v": 0,
+        "createdAt": "2020-06-07T14:22:08.302Z",
+        "updatedAt": "2020-06-07T14:22:08.302Z"
+    },
+    {
+        "_id": "5edcf810cbb30baffc29bd70",
+        "Brand": "Nike",
+        "Product_name": "Air",
+        "Product_img": "/images/nike-blaze.png",
+        "Category": "Men",
+        "Size": "UK 9",
+        "Colour": "White",
+        "Status": "READY",
+        "Customer_initials": "JD",
+        "__v": 0,
+        "createdAt": "2020-06-07T14:22:08.303Z",
+        "updatedAt": "2020-06-07T14:22:08.303Z"
+    },
+    ...
+]
+```
+
 ### GET `/orders/:id`
 
 Returns an order by ID
+
+Example `/api/orders/5edcf810cbb30baffc29bd70`
+
+```
+{
+        "_id": "5edcf810cbb30baffc29bd70",
+        "Brand": "Nike",
+        "Product_name": "Air",
+        "Product_img": "/images/nike-blaze.png",
+        "Category": "Men",
+        "Size": "UK 9",
+        "Colour": "White",
+        "Status": "READY",
+        "Customer_initials": "JD",
+        "__v": 0,
+        "createdAt": "2020-06-07T14:22:08.303Z",
+        "updatedAt": "2020-06-07T14:22:08.303Z"
+    }
+```
 
 ### POST `/orders`
 
@@ -38,6 +91,8 @@ Add a new order, you must pass a json object as the body.
 	"Customer_initials": "MH"
 }
 ```
+
+Returns a 200 status and the saved data.
 
 ### PUT `/orders/:id`
 
@@ -59,3 +114,7 @@ Update an existing order. Currently you must pass the original parameters
 ### DELETE `/orders/:id`
 
 Delete an order by ID
+
+Example `/api/orders/5edcf810cbb30baffc29bd70`
+
+Returns a 200 status
