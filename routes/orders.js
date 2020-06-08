@@ -4,7 +4,9 @@ const router = express.Router()
 
 // Get all orders
 router.get('/', async (req, res) => {
-  const orders = await Order.find().sort({ createdBy: -1 })
+  const orders = await Order.find().sort({
+    createdBy: -1,
+  })
   res.send(orders)
 })
 
